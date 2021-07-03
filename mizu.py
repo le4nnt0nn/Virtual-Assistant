@@ -1,6 +1,8 @@
 import speech_recognition as  sr
 import pyttsx3
 
+# - puedes cambiar el nombre al que quieras
+name = "ruka"
 listener = sr.Recognizer()
 
 engine = pyttsx3.init()
@@ -16,7 +18,10 @@ try:
         print("Escuchando...")
         voice = listener.listen(source)
         rec = listener.recognize_google(voice)
-        talk(rec)
+        rec = rec.lower()
+        # - si el nombre seleccionado se escucha, lo repite
+        if name in rec:
+            talk(rec)
         # print(rec) - imprime lo que dices
 except:
     pass
