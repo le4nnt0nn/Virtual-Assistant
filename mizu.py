@@ -1,6 +1,8 @@
 import speech_recognition as  sr
 import pyttsx3
 import pywhatkit
+import datetime
+import wikipedia
 
 # - puedes cambiar el nombre al que quieras
 name = "alexa"
@@ -18,7 +20,7 @@ def listen():
         with sr.Microphone() as source:
             print("Escuchando...")
             voice = listener.listen(source)
-            rec = listener.recognize_google(voice)
+            rec = listener.recognize_google(voice, language='es-ES')
             rec = rec.lower()
             # - si el nombre seleccionado se escucha, lo repite
             if name in rec:
@@ -40,6 +42,17 @@ def run():
         talk("Reproduciendo "+ music)
         # playonyt permite reproducir la musica en youtube
         pywhatkit.playonyt(music)
+    if "hora" in rec:
+        hora = datetime.datetime.now().strftime('%I:%M %p')
+        talk("Son las "+hora)
+        # permite devolver la hora
+    if "busca" in rec:
+        order = rec.replace("busca", "")
+        info = wikipedia.summary(order, 1)
+        talk(info)
+        # permite buscar cualquier cosa en wikipedia
+    else:
+        talk("No te he entendido, vuelve a intentarlo")
 
-
-run()
+while True:
+    run()
