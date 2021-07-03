@@ -42,11 +42,11 @@ def run():
         talk("Reproduciendo "+ music)
         # playonyt permite reproducir la musica en youtube
         pywhatkit.playonyt(music)
-    if "hora" in rec:
+    elif "hora" in rec:
         hora = datetime.datetime.now().strftime('%I:%M %p')
         talk("Son las "+hora)
         # permite devolver la hora
-    if "busca" in rec:
+    elif "busca" in rec:
         order = rec.replace("busca", "")
         info = wikipedia.summary(order, 1)
         talk(info)
