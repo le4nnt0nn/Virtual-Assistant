@@ -2,7 +2,7 @@ import speech_recognition as  sr
 import pyttsx3
 
 # - puedes cambiar el nombre al que quieras
-name = "cuca"
+name = "ari"
 listener = sr.Recognizer()
 
 engine = pyttsx3.init()
@@ -21,6 +21,7 @@ def listen():
             rec = rec.lower()
             # - si el nombre seleccionado se escucha, lo repite
             if name in rec:
+                # - replace evita que diga su nombre en la rec
                 rec = rec.replace(name, '')
                 print(rec)
             # talk(rec) - repite lo que dices    
