@@ -1,8 +1,9 @@
 import speech_recognition as  sr
 import pyttsx3
+import pywhatkit
 
 # - puedes cambiar el nombre al que quieras
-name = "ari"
+name = "alexa"
 listener = sr.Recognizer()
 
 engine = pyttsx3.init()
@@ -37,6 +38,8 @@ def run():
     if 'reproduce' in rec:
         music = rec.replace("reproduce", "")
         talk("Reproduciendo "+ music)
+        # playonyt permite reproducir la musica en youtube
+        pywhatkit.playonyt(music)
 
 
 run()
