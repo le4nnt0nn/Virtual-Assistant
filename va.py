@@ -9,7 +9,7 @@ from wikipedia.wikipedia import random
 
 # - puedes cambiar el nombre al que quieras
 name = "alexa"
-rand = random.randint(0,3)
+
 
 # - escuchador y motor 
 listener = sr.Recognizer()
@@ -96,6 +96,7 @@ def run():
             talk("No, hoy el cielo va a estar totalmente despejado")
         # - chequea si va a estar nublado o no
     elif "me quieres" or "me amas" or "me adoras" in rec:
+        rand = random.randint(0,3)
         if rand==0:
             talk("Ya estoy comprometida con la calculadora de tu pc, lo siento")
         elif rand==1:
