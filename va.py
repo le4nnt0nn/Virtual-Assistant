@@ -5,7 +5,6 @@ import datetime
 import wikipedia
 import pyowm
 import random
-from wikipedia.wikipedia import random
 
 # - puedes cambiar el nombre al que quieras
 name = "alexa"
@@ -95,7 +94,7 @@ def run():
         else:
             talk("No, hoy el cielo va a estar totalmente despejado")
         # - chequea si va a estar nublado o no
-    elif "me quieres" or "me amas" or "me adoras" in rec:
+    elif "me quieres" in rec:
         rand = random.randint(0,3)
         if rand==0:
             talk("Ya estoy comprometida con la calculadora de tu pc, lo siento")
