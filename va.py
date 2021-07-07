@@ -9,6 +9,7 @@ from wikipedia.wikipedia import random
 
 # - puedes cambiar el nombre al que quieras
 name = "alexa"
+rand = random.randint(0,3)
 
 # - escuchador y motor 
 listener = sr.Recognizer()
@@ -82,27 +83,26 @@ def run():
     elif "temperatura" in rec:
         talk("Ahora mismo en tu ciudad hacen "+str(tempi)+" grados celsius")
         # - te dice la temperatura que hay en tu ciudad
-    elif "lluvia" or "llover" in rec:
+    elif "lluvia"  in rec:
         if rain==True:
             talk("Si, se espera lluvia en el día de hoy")
         else:
             talk("No, hoy no se espera lluvia")
         # - chequea si va a llover o no
-    elif "nublado" or "nubes" in rec:
+    elif "nublado" in rec:
         if clouds==True:
             talk("Si, hoy se espera un dia nublado")
         else:
             talk("No, hoy el cielo va a estar totalmente despejado")
         # - chequea si va a estar nublado o no
     elif "me quieres" or "me amas" or "me adoras" in rec:
-        rand = random.randrange(0,3)
         if rand==0:
             talk("Ya estoy comprometida con la calculadora de tu pc, lo siento")
-        if rand==1:
+        elif rand==1:
             talk("Creo que será mejor que te busques una pareja de tu especie, gracias")
-        if rand==2:
+        elif rand==2:
             talk("Si, pero como amigos")
-        if rand==3:
+        elif rand==3:
             talk("Qué asco, no digas esas cosas")
     else:
         talk("No te he entendido, vuelve a intentarlo")
