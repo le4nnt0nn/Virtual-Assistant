@@ -85,6 +85,11 @@ def run():
             talk("Si, se espera lluvia en el día de hoy")
         else:
             talk("No, hoy no se espera lluvia")
+    elif "nublado" in rec:
+        if clouds==True:
+            talk("Si, hoy se espera un dia nublado")
+        else:
+            talk("No, hoy es un día sin nubes")
     else:
         talk("No te he entendido, vuelve a intentarlo")
 
