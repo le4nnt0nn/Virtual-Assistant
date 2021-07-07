@@ -20,8 +20,12 @@ weather = loc.get_weather()
 # - temperatura
 temp = weather.get_temperature(unit="celsius")
 
-# for key,val in temp.items():
-#    print(f'{key} => {val}')
+#- selecciono el valor de la key de temperatura
+for key,val in temp.items():
+    if key=="temp":
+        tempi = {val} 
+
+
 
 # - este método permite que la máquina repita lo que tu digas
 def talk(text):
@@ -64,6 +68,8 @@ def run():
         info = wikipedia.summary(order, 1)
         talk(info)
         # permite buscar cualquier cosa en wikipedia
+    elif "temperatura" in rec:
+        talk("Ahora mismo en tu ciudad hacen "+str(tempi)+" grados celsius")
     else:
         talk("No te he entendido, vuelve a intentarlo")
 
