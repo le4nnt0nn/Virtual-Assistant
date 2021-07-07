@@ -7,8 +7,9 @@ import pyowm
 
 # - puedes cambiar el nombre al que quieras
 name = "alexa"
-listener = sr.Recognizer()
 
+# - escuchador y motor 
+listener = sr.Recognizer()
 engine = pyttsx3.init()
 
 # - weather
@@ -32,6 +33,7 @@ def talk(text):
     engine.say(text)
     engine.runAndWait()
 
+# - método que permite escuchar desde tu micrófono
 def listen():
     try:
         with sr.Microphone() as source:
@@ -51,6 +53,7 @@ def listen():
     # - retorna rec
     return rec
 
+# - run arranca el asistente
 def run():
     # - rec recoge el valor de listen
     rec = listen()
@@ -70,6 +73,7 @@ def run():
         # permite buscar cualquier cosa en wikipedia
     elif "temperatura" in rec:
         talk("Ahora mismo en tu ciudad hacen "+str(tempi)+" grados celsius")
+        # - te dice la temperatura que hay en tu ciudad
     else:
         talk("No te he entendido, vuelve a intentarlo")
 
