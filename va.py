@@ -26,6 +26,12 @@ for key,val in temp.items():
     if key=="temp":
         tempi = {val} 
 
+# - tiempo
+loc = owm.three_hours_forecast(city)
+# - pregunta si habrá nubes o lluvia en tu ciudad
+clouds = str(loc.will_have_clouds())
+rain = str(loc.will_have_rain())
+
 
 
 # - este método permite que la máquina repita lo que tu digas
@@ -74,6 +80,11 @@ def run():
     elif "temperatura" in rec:
         talk("Ahora mismo en tu ciudad hacen "+str(tempi)+" grados celsius")
         # - te dice la temperatura que hay en tu ciudad
+    elif "lluvia" in rec:
+        if rain==True:
+            talk("Si, se espera lluvia en el día de hoy")
+        else:
+            talk("No, hoy no se espera lluvia")
     else:
         talk("No te he entendido, vuelve a intentarlo")
 
