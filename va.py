@@ -80,13 +80,13 @@ def run():
     elif "temperatura" in rec:
         talk("Ahora mismo en tu ciudad hacen "+str(tempi)+" grados celsius")
         # - te dice la temperatura que hay en tu ciudad
-    elif "lluvia" in rec:
+    elif "lluvia" or "llover" in rec:
         if rain==True:
             talk("Si, se espera lluvia en el día de hoy")
         else:
             talk("No, hoy no se espera lluvia")
         # - chequea si va a llover o no
-    elif "nublado" in rec:
+    elif "nublado" or "nubes" in rec:
         if clouds==True:
             talk("Si, hoy se espera un dia nublado")
         else:
