@@ -4,9 +4,13 @@ import pywhatkit
 import datetime
 import wikipedia
 import pyowm
+import random
+from wikipedia.wikipedia import random
 
 # - puedes cambiar el nombre al que quieras
 name = "alexa"
+
+
 
 # - escuchador y motor 
 listener = sr.Recognizer()
@@ -92,6 +96,8 @@ def run():
         else:
             talk("No, hoy el cielo va a estar totalmente despejado")
         # - chequea si va a estar nublado o no
+    elif "me quieres" or "me amas" or "me adoras" in rec:
+        talk("Un poco, puede ser")
     else:
         talk("No te he entendido, vuelve a intentarlo")
 
