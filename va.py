@@ -3,12 +3,25 @@ import pyttsx3
 import pywhatkit
 import datetime
 import wikipedia
+import pyowm
 
 # - puedes cambiar el nombre al que quieras
 name = "alexa"
 listener = sr.Recognizer()
 
 engine = pyttsx3.init()
+
+# - weather
+owm = pyowm.OWM('649596c70acbd15c65ae8da5b1bf5ab2')
+# - puedes cambiar el nombre de la ciudad para obtener sus datos del tiempo
+city = "Seville"
+loc = owm.weather_at_place(city)
+weather = loc.get_weather()
+# - temperatura
+temp = weather.get_temperature(unit="celsius")
+
+# for key,val in temp.items():
+#    print(f'{key} => {val}')
 
 # - este método permite que la máquina repita lo que tu digas
 def talk(text):
