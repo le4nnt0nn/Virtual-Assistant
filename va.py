@@ -1,18 +1,13 @@
-import speech_recognition as  sr
-import pyttsx3
+from functions.listen import listen
+from functions.talk import talk
+
+
 import pywhatkit
 import datetime
 import wikipedia
 import pyowm
 import random
 
-# - puedes cambiar el nombre al que quieras
-name = "alexa"
-
-
-# - escuchador y motor 
-listener = sr.Recognizer()
-engine = pyttsx3.init()
 
 # - weather
 owm = pyowm.OWM('649596c70acbd15c65ae8da5b1bf5ab2')
@@ -34,32 +29,6 @@ loc = owm.three_hours_forecast(city)
 clouds = str(loc.will_have_clouds())
 rain = str(loc.will_have_rain())
 
-
-
-# - este método permite que la máquina repita lo que tu digas
-def talk(text):
-    engine.say(text)
-    engine.runAndWait()
-
-# - método que permite escuchar desde tu micrófono
-def listen():
-    try:
-        with sr.Microphone() as source:
-            print("Escuchando...")
-            voice = listener.listen(source)
-            rec = listener.recognize_google(voice, language='es-ES')
-            rec = rec.lower()
-            # - si el nombre seleccionado se escucha, lo repite
-            if name in rec:
-                # - replace evita que diga su nombre en la rec
-                rec = rec.replace(name, '')
-                print(rec)
-            # talk(rec) - repite lo que dices    
-            # print(rec) - imprime lo que dices
-    except:
-        pass
-    # - retorna rec
-    return rec
 
 # - run arranca el asistente
 def run():
