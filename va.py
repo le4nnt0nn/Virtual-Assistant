@@ -104,20 +104,18 @@ def run():
             talk("Si, pero como amigos")
         elif rand==3:
             talk("Qué asco, no digas esas cosas")
-    else:
-        talk("No te he entendido, vuelve a intentarlo")
-        
+        else:
+            talk("No te he entendido, vuelve a intentarlo")
+
     elif "chiste" in rec:
         rand = random.randint(0,3)
         if rand==0:
-            talk("Qué le dice una iguana a su hermana gemela? Somos iguanitas")
+            talk("Van dos cieguitos por la calle pasando calor y dicen: ¡Ojalá lloviera! ¡Ojalá yo también!")
         elif rand==1:
-            talk("Rápido necesitamos sangre. Yo soy 0 positivo. Muy mal, aqui se viene a animar")
+            talk("Qué le dice una iguana a su hermana gemela? Somos iguanitas")
         elif rand==2:
-            talk("Qué hace un perro con un taladro? Taladrar")
-        elif rand==3:
             talk("Qué hace un mudo bailando? Una mudanza")
-    
-
+        elif rand==3:
+            talk("Rápido necesitamos sangre. Yo soy 0 positivo. Muy mal, aqui se viene a animar")
 while True:
     run()
