@@ -68,9 +68,9 @@ def run():
         # - chequea si va a estar nublado o no
     elif "me quieres" in rec:
         love(rand)
-    
+        # - genera respuestas aleatorias sobre amor
     elif "chiste" in rec:
         jokes(rand)
-
+        # - genera chistes aleatorios
 while True:
     run()
