@@ -1,5 +1,8 @@
-from functions.listen import listen
 from functions.talk import talk
+from functions.listen import listen
+from functions.jokes import jokes
+from functions.love import love
+
 
 
 import pywhatkit
@@ -8,7 +11,7 @@ import wikipedia
 import pyowm
 import random
 
-
+rand = random.randint(0,3)
 # - weather
 owm = pyowm.OWM('649596c70acbd15c65ae8da5b1bf5ab2')
 # - puedes cambiar el nombre de la ciudad para obtener sus datos del tiempo
@@ -64,27 +67,10 @@ def run():
             talk("No, hoy el cielo va a estar totalmente despejado")
         # - chequea si va a estar nublado o no
     elif "me quieres" in rec:
-        rand = random.randint(0,3)
-        if rand==0:
-            talk("Ya estoy comprometida con la calculadora de tu pc, lo siento")
-        elif rand==1:
-            talk("Creo que será mejor que te busques una pareja de tu especie, gracias")
-        elif rand==2:
-            talk("Si, pero como amigos")
-        elif rand==3:
-            talk("Qué asco, no digas esas cosas")
-        else:
-            talk("No te he entendido, vuelve a intentarlo")
-
+        love(rand)
+    
     elif "chiste" in rec:
-        rand = random.randint(0,3)
-        if rand==0:
-            talk("Van dos cieguitos por la calle pasando calor y dicen: ¡Ojalá lloviera! ¡Ojalá yo también!")
-        elif rand==1:
-            talk("Qué le dice una iguana a su hermana gemela? Somos iguanitas")
-        elif rand==2:
-            talk("Qué hace un mudo bailando? Una mudanza")
-        elif rand==3:
-            talk("Rápido necesitamos sangre. Yo soy 0 positivo. Muy mal, aqui se viene a animar")
+        jokes(rand)
+
 while True:
     run()
