@@ -1,10 +1,10 @@
+# - imports propios
 from functions.talk import talk
 from functions.listen import listen
 from functions.jokes import jokes
 from functions.love import love
 
-
-
+# - otras librerías
 import pywhatkit
 import datetime
 import wikipedia
