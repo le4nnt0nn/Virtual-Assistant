@@ -1,6 +1,6 @@
-import talk
+from .talk import talk
 
-def joke(rand):
+def jokes(rand):
     if rand==0:
         talk("Van dos cieguitos por la calle pasando calor y dicen: ¡Ojalá lloviera! ¡Ojalá yo también!")
     elif rand==1:
