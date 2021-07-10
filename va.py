@@ -11,6 +11,7 @@ import wikipedia
 import pyowm
 import random
 
+# - random for choices
 rand = random.randint(0,3)
 # - weather
 owm = pyowm.OWM('649596c70acbd15c65ae8da5b1bf5ab2')
