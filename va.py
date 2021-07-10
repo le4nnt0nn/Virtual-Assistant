@@ -78,9 +78,10 @@ def run():
     elif "calendario" in rec:
         talk("Mostrando el calendario")
         goCalendar()
+        # - muestra el calendario
     elif "gracias" in rec:
         talk("De nada, espero haberte ayudado")
         sys.exit(0)
-        
+        # - Sale del programa
 while True:
     run()
