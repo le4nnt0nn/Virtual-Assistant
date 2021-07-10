@@ -1,4 +1,5 @@
 # - imports propios
+import sys
 from functions.talk import talk
 from functions.listen import listen
 from functions.jokes import jokes
@@ -77,6 +78,9 @@ def run():
     elif "calendario" in rec:
         talk("Mostrando el calendario")
         goCalendar()
+    elif "gracias" in rec:
+        talk("De nada, espero haberte ayudado")
+        sys.exit(0)
         
 while True:
     run()
