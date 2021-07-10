@@ -3,6 +3,7 @@ from functions.talk import talk
 from functions.listen import listen
 from functions.jokes import jokes
 from functions.love import love
+from functions.calendar import calendar, goCalendar
 
 # - otras librerías
 import pywhatkit
@@ -73,5 +74,9 @@ def run():
     elif "chiste" in rec:
         jokes(rand)
         # - genera chistes aleatorios
+    elif "calendario" in rec:
+        talk("Mostrando el calendario")
+        goCalendar()
+        
 while True:
     run()
