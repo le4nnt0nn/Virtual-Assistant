@@ -7,5 +7,5 @@ def goCalendar():
     c = calendar.TextCalendar(calendar.SUNDAY)
     # - el calendario empieza en domingo
     str = c.formatmonth(currentYear, currentMonth)
-    # - el calendario pertenecerá al año 2021 y al mes de julio. Se puede cambiar al que prefieras
+    # - el calendario pertenecerá al año y al mes en el que estés
     print(str)
