@@ -5,6 +5,7 @@ from functions.listen import listen
 from functions.jokes import jokes
 from functions.love import love
 from functions.calendar import calendar, goCalendar
+from functions.filex import filex, reminder
 
 # - otras librerías
 import pywhatkit
@@ -82,6 +83,14 @@ def run():
         talk("Mostrando el calendario")
         goCalendar()
         # - muestra el calendario
+    elif "recordatorio" in rec:
+        talk("Qué te gustaría recordar?")
+        rem = listen()
+        if "recordar" in rem:
+            reminder(rem)
+            talk("Se ha guardado tu recordatorio en un fichero de texto con éxito")
+        else:
+            talk("No se ha podido guardar tu recordatorio en un archivo de texto")
     elif "gracias" in rec:
         talk("De nada, espero haberte ayudado")
         sys.exit(0)
