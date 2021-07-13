@@ -5,7 +5,7 @@ from functions.listen import listen
 from functions.jokes import jokes
 from functions.love import love
 from functions.calendar import calendar, goCalendar
-from functions.filex import filex, reminder
+from functions.txtGen import reminder
 
 # - otras librerías
 import pywhatkit
