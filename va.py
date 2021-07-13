@@ -87,6 +87,7 @@ def run():
         talk("Qué te gustaría recordar?")
         rem = listen()
         if "recordar" in rem:
+            rem = rem.replace("recordar", '')
             reminder(rem)
             talk("Se ha guardado tu recordatorio en un fichero de texto con éxito")
         else:
