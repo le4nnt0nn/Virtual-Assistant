@@ -6,14 +6,6 @@
 
  <div align="center">
     <h3>[Virtual Assistant 🤖]<h3>
-    <h5>Check it in 🔍</h5>
-    <h3>
-        <span> | </span>
-         <a href="https://codesandbox.io/s/le4nnt0nnweather-app-react-terso">
-            CodeSandBox
-        </a>
-        <span> | </span>
-    </h3>
 </div>
 
 ***
@@ -34,19 +26,19 @@ Only you need to do is Launch this app in your favorite IDE thats support Python
 
 Used [Python](https://www.python.org/doc/ "Python Documentation").
 
-> Used libraries
+> Used libraries and packages
 
 **Python**
 
-* _pywhatkit_
-* _datetime_
-* _wikipedia_
-* _pyowm_
+* _pywhatkit_ (https://pypi.org/project/pywhatkit/)
+* _datetime_ 
+* _wikipedia_ (https://pypi.org/project/wikipedia/)
+* _pyowm_ (https://pypi.org/project/pyowm/)
 * _random_
 * _calendar_
 * _io_
-* _speech-recognition_
-* _pyttsx3_
+* _speech-recognition_ (https://pypi.org/project/SpeechRecognition/)
+* _pyttsx3_ (https://pypi.org/project/pyttsx3/)
 
 ***
 
