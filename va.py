@@ -91,6 +91,7 @@ def run():
             talk("Se ha guardado tu recordatorio en un fichero de texto con éxito")
         else:
             talk("No se ha podido guardar tu recordatorio en un archivo de texto")
+        # - guarda un recordatorio en un archivo de texto
     elif "gracias" in rec:
         talk("De nada, espero haberte ayudado")
         sys.exit(0)
